@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- 
+        의문점
+        1. align을 할 때 table에서 하고 rowgroup을 생성하면 왜 align이 취소가 되는지
+        2. width를 설정할 때 넓이를 갖게 해도 그 비율이 맞지 않는 경우 왜 그러는지
+     -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        참고코드
+        tr*3>th+td*3
+     -->
+    <!-- 
+        Link: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+        table은 thead, tbody,tfoot의 세 부분으로 구성되어 있다.
+     -->
+    <table>
+      <!-- 
+        caption: 테이블의 제목으로 한 개만 올 수 있음.
+     -->
+      <caption>
+        Front-end web developer course 2021
+      </caption>
+      <!-- 
+        테이블의 head 부분
+        - 
+       -->
+      <thead>
+        <!-- 
+            tr: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr
+            1. 행을 정의해주며 td와 th로 구성되어 있다.
+            th: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th
+            1. cell을 테이블 그룹의 헤더로 정의
+            td: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td
+            1. 데이터를 포함한 테이블의 열을 정의
+            scope: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th
+            https://www.tcpschool.com/html-tag-attrs/th-scope
+            1. 헤더와 관련된 셀을 정의
+            ex) row: 해당 셀이 행(row)을 위한 헤더 셀임을 명시함.
+                col: 해당 셀이 열(column)을 위한 헤더 셀임을 명시함.
+                rowgroup: 해당 셀이 행의 그룹을 위한 헤더 셀임을 명시
+            colspan: 행의 범위
+         -->
+        <tr>
+          <th scope="col">Person</th>
+          <th scope="col">Most interest in</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <!-- 
+        테이블의 body 부분
+       -->
+      <tbody>
+        <tr>
+          <th scope="row">Chris</th>
+          <td>HTML tables</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <th scope="row">Dennis</th>
+          <td>Web accessibility</td>
+          <td>45</td>
+        </tr>
+        <tr>
+          <th scope="row">Sarah</th>
+          <td>JavaScript frameworks</td>
+          <td>29</td>
+        </tr>
+        <tr>
+          <th scope="row">Karen</th>
+          <td>Web performance</td>
+          <td>36</td>
+        </tr>
+        <!-- 
+            colgroup: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup
+            그룹화 해서 css에서 사용할 수 있도록(열을 묶으면 colgroup, 행을 묶으면 rowgroup)
+         -->
+      </tbody>
+      <!-- 
+        테이블의 foot 부분
+       -->
+      <tfoot>
+        <tr>
+          <th scope="row" colspan="2">Average age</th>
+          <td>33</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

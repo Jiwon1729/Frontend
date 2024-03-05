@@ -1,0 +1,64 @@
+<!-- 
+    DOCTYPE
+    1. 어떤 언어로 작성하였는지 알려준다.
+    2. 어떤 버전인지에 대해 알려준다.
+    -> html5 버전을 사용하고 있다는 의미
+ -->
+<!DOCTYPE html>
+<!-- 
+    html: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html
+    1. root element -> 다른 것은 무조건 이 것 아래에 옴
+    2. global attribute 포함
+    3. 다른 attribute에 대해서는 추가로 문서를 확인할 것
+ -->
+<!-- 
+    global attribute: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
+    1. 전역 속성으로 class,id 등의 속성값인데, 어떤 element든 상관없이 이 속성값이 들어갈 수 있다.
+  -->
+<!-- 
+    lang
+    1. language reading을 도움(시각 장애인 등 도움 줄 수 있다.)
+    2. 사용자에게 어떤 언어로 문서가 작성되어있는지 알려줄 수 있다.
+ -->
+<html lang="en">
+  <!-- 
+        head: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head
+        1. 문서의 machine-readable information(matadata)를 포함
+        2. title, script, style sheet등이 있다.
+     -->
+  <head>
+    <!-- 
+        meta: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+        1. 다른 HTML meta-related elements로 표현될 수 없는 것 씀
+        (base, link, script, style 같은 것)
+        2. name이 속성이면 이 속성은 전체 페이지에 적용되는 document-level metadata 제공
+        3. charset: 인코딩되는 char 알려줌
+        4. content는 http-equiv 또는 name 특성값을 가짐. name과 같이 쓰이면 value
+    -->
+    <meta charset="UTF-8" />
+    <!-- 
+        viewport: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name
+        1. 초기 사이즈에 대한 힌트
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+        title bar에 보이는 text. tag는 무시됨
+     -->
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<!-- 
+    &nbsp; 공백
+    &lt; <
+    &gt; >
+    &amp ampersand &
+    &quot "
+    &copy; c(바깥에 동그라미 있음)
+    &reg; r(바깥에 동그라미 있음)
+ -->
+<!-- 
+    h1~h6: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
+    섹션헤더의 각 레벨
+  -->
