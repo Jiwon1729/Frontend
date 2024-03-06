@@ -1,0 +1,16 @@
+h1 {
+  color: peru;
+}
+h2 {
+  color: skyblue /* !important */;
+}
+h2.em {
+  color: skyblue;
+}
+h4.prioritytest {
+  color: black;
+}
+p {
+  background-color: skyblue;
+  color: skyblue;
+}

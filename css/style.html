@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+        링크를 통한 연결
+     -->
+    <link rel="stylesheet" href="css/csstest.css" type="text/css" />
+    <!-- 
+        import를 통한 연결
+     -->
+
+    <!-- 
+        style: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style
+        ** rel: 관계
+        ** href: CSS 경로
+        ** type: text/css만 가능. 
+        This attribute should not be provided: if it is, the only permitted values are the empty string or a case-insensitive match for text/css.
+        ** media: 적용 되야하는 스타일의 미디어가 뭔지 정함
+    -->
+    <style type="text/css">
+      @import url("css/csstest2.css");
+      /* @import "css/csstest2.css"*/
+      h2 {
+        color: red;
+      }
+
+      p {
+        background-color: red;
+        color: red;
+      }
+      h4 {
+        color: red !important;
+      }
+      h4.priortytest {
+        color: skyblue;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="css/csstest.css" type="text/css" /> -->
+  </head>
+  <!-- 
+    스타일 적용 순서
+    1. important가 있으면 우선 순위
+    2. 계층이 구체적인 지 파고든다.
+    3. 계층이 같은 경우(h2로 같은 경우)는 인라인->내부->외부 순(같은 레벨일 경우)
+    4. 인라인/내부/외부가 같은 경우(ex)둘 다 외부) 밑에 있는 것이 위에 것을 덮어 씌우므로 밑에 써 있는 것이 적용된다.
+    ** inner style sheet는 국지적으로 적용된다.
+
+    인라인은 유지보수에 적합하지 않으므로 사용하지 말 것!
+   -->
+  <body>
+    <h1>outer style sheet</h1>
+    <h2>inner style sheet</h2>
+    <h2 class="em">class test: 더 구체적이면 우선순위</h2>
+    <h3>import test</h3>
+    <p>using inner stylesheet</p>
+    <h2 style="color: blue !important">inline style sheet</h2>
+    <h2 class="em" style="color: blue !important">
+      class test: 더 구체적이면 우선순위: important는 최우선
+    </h2>
+    <h2 class="em">
+      class test: 더 구체적이면 우선순위: inner stylesheet는 국지적으로 적용됨
+    </h2>
+    <h4 class="priortytest" style="color: blue">
+      다른 계층일 때 important 비교 결과: important가 계층보다 우선순위
+    </h4>
+    <p style="background-color: blue">
+      inline stylesheet: 같은 계층일 경우 inline이 1순위
+    </p>
+    <!-- 
+     -->
+  </body>
+</html>

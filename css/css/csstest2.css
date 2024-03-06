@@ -1,0 +1,9 @@
+h3 {
+  color: palegreen;
+}
+h2 {
+  color: palegreen /* !important */;
+}
+h2.em {
+  color: palegreen;
+}

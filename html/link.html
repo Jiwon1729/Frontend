@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+    link:
+    1. 문서와 외부 자원 연결
+    2. head 위치에 정의
+    ** rel: 현재 문서와 연결된 문서와의 관계
+   -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- 
+        a: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+        1. The anchor element
+        2. 페이지 주소 파일, 같은 페이지의 위치 등 하이퍼링크 생성
+        **target 속성값
+        _blank: 링크 내용이 새 창/새 탭에서
+        _self: 링크가 있는 화면에서
+        _parent,_top 도 있음
+        **href: 하이퍼링크 연결을 하는 URL
+        1. 사이트 연결할 때는 http써 줘야 함
+     -->
+    <li><a href="http://www.naver.com">example</a></li>
+    <li><a href="#content2">example</a></li>
+    <li><a href="www.naver.com">example</a></li>
+    <p><a href="content2">exmple_content</a></p>
+    <!-- 
+      iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+      1. 
+      ** src: url 연결할 페이지
+      ** frameborder: 경계션을 그릴지 말지. default는 1이고 안그리길 원하면 0으로
+    -->
+    <iframe src="table.html" width="500" height="300"></iframe>
+  </body>
+</html>

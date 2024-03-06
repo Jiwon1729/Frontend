@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        background-color: aqua;
+      }
+      .box {
+        width: 1000px;
+        border: 100px black;
+        margin: 200px auto;
+        padding: 10px;
+        background-color: skyblue;
+        color: yellow;
+        text-align: center;
+      }
+
+      .box-size {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        1. CSS의 모든 엘리먼트는 여러 겹의 상자로 둘러 쌓여 있다고 가정
+        2. 모든 요소는 위에서 아래, 왼쪽에서 오른쪽으로 쌓임
+        3. 컨텐트,패딩,테두리,마진으로 구분. 기본 사이즈(width)는 컨텐트 기준
+        **바꾸고 싶다면 box-sizing: border-box;넣기
+     -->
+    <div>
+      <div class="box">content-box</div>
+      <div class="box box-size">border-box</div>
+    </div>
+  </body>
+</html>
