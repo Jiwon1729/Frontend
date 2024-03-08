@@ -1,0 +1,48 @@
+<!-- 
+  parent.appendChild(val)은 val을 parent의 마지막 노드에 추가하며. string 등은 추가 안된다. 추가하려면 create를 이용해야 한다.
+  반면 parent.append는 추가할 수 있다.
+  !! title2.append(msg)가 뒤에 있어도 영향을 줌... 왜 인지 찾아봐야 함
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        // 변수를 선언하고 element node와 text node 생성.
+        var title = document.createElement("h2");
+        var title2 = document.createElement("h2");
+        var msg = document.createTextNode("Hello SSAFY !!!");
+        var msg2 = document.createTextNode("Hello SSAFY2 !!!");
+        // text node를 element node에 추가.
+        /*
+        appendChild: https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+        1. 노드를 부모의 자식리스트의 끝에 붙이는 것
+        Note: If the given child is a reference to an existing node in the document, appendChild() moves it from its current position to the new position.
+        Element.append: https://developer.mozilla.org/en-US/docs/Web/API/Element/append
+
+        */
+        title2.appendChild(msg2);
+        // appendChild를 통해 node를 추가하려면 create를 사용해야 한다.
+        title2.appendChild(document.createTextNode("p"));
+        title2.appendChild(document.createTextNode("p"));
+        // ******JavaScript에서 DOM 요소나 노드는 한 번에 한 곳에만 존재할 수 있습니다.
+        title.append(msg);
+        title.append(msg);
+        title.append("Some text");
+        // title.append(msg, msg);
+        /*출력결과... title2.append(msg)가 뒤에 있어도 영향을 줌
+        Hello SSAFY2 !!!ppHello SSAFY !!!
+        Some text
+        */
+        document.body.appendChild(title2);
+        document.body.appendChild(title);
+        title2.append(msg);
+        // document.body.appendChild(title2);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

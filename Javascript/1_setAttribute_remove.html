@@ -1,0 +1,41 @@
+<!-- 
+  속성을 추가하는 방법은 두 가지가 있다.
+  1. element.newattirbute(value);
+  2. element.setAttribute(attribute,value);
+  2는 새로운 속성을 추가하여 사용할 수 있지만, 1은 웹이 지원하는 속성만 추가/변경하여 사용할 수 있다.
+  속성을 제거하는 방법은
+  removeChild(childnode)로 한다. 객체의 자식 노드가 제거된다.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      function removeElement() {
+        let el = document.querySelector("#remove");
+        document.body.removeChild(el);
+      }
+      window.onload = function () {
+        var profile = document.createElement("img");
+        profile.setAttribute("src", "tmp.png");
+        profile.setAttribute("width", 150);
+        profile.setAttribute("height", 200);
+        profile.setAttribute("addatt", "setAttribute를 통해 추가된 attribute");
+        console.log(profile.addatt);
+        // setAttribute를 사용하지 않으면 웹이 지원하는 속성만 가능
+        profile.my_data = "그냥 추가한 attribute";
+        console.log(profile.getAttribute("addatt"));
+        console.log(profile.getAttribute("my_data"));
+        document.body.appendChild(profile);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="remove">
+      삭제할텍스트
+      <button onclick="removeElement();">삭제</button>
+    </div>
+  </body>
+</html>

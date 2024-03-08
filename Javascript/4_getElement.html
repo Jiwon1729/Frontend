@@ -1,0 +1,38 @@
+<!-- 
+    https://bobbohee.github.io/2021-02-12/getelementbyid-versus-queryselector
+    getAttrigute와 quaryselector
+    quarySelector은 느리다.
+    getElementById는 id속성만 사용할 수 있지만 quarySelector은 다양한 선택자를 사용할 수 있다.
+    ** getElementById, querySelector는 객체
+    ** getElements~.. querySelectorAll은 객체 배열을 얻는다.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script type="text/javascript">
+    window.onload = function () {
+      var color = ["blue", "green", "red"];
+      var quarysel = document.querySelectorAll(".quary");
+      var getel = document.getElementById("get");
+      getel.style.color = "black";
+      for (var i = 0; i < quarysel.length; i++) {
+        quarysel[i].style.color = color[i % 3];
+      }
+    };
+  </script>
+  <body>
+    <h1 id="get" class="quary">quarytest</h1>
+    <h2 class="quary">quarytest</h2>
+    <h3 class="quary">quarytest</h3>
+    <h4 class="quary">quarytest</h4>
+    <h5 class="quary">quarytest</h5>
+    <h6 class="quary">quarytest</h6>
+    <h4 class="quary">quarytest</h4>
+    <h5 class="quary">quarytest</h5>
+    <h6 class="quary">quarytest</h6>
+  </body>
+</html>

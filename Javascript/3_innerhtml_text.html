@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        var html = document.getElementById("Html");
+        var text = document.getElementById("Text");
+        var htmlToText = document.getElementById("HtmlToText");
+        // 문자열을 html 태그로 삽입
+        html.innerHTML = "<h2>innerHTML</h2><h2>innerHTML2</h2>";
+        // 문자열을 text node로 삽입
+        text.innerText = "<h2>innerText</h2>";
+        htmlToText.innerHTML = "<h2>HtmltoText</h2>"
+          // 정규표현식 사용해야 제대로 지워진다.
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+        // replace(">", "&gt;"); x
+      };
+    </script>
+  </head>
+  <body>
+    <div id="Html"></div>
+    <!-- ******JavaScript에서 DOM 요소나 노드는 한 번에 한 곳에만 존재할 수 있음 -->
+    <div id="Html"></div>
+    <div id="Text"></div>
+    <div id="HtmlToText"></div>
+  </body>
+</html>
